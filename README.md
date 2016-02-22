@@ -1,8 +1,8 @@
 # caramaestra
 
-Il Bot Telegram della Simpatica prof.ssa Maria Barbadoro
+Il Bot Telegram della simpaticissima prof.ssa Maria Barbadoro
 
-# Fork di [telegram-bot-ruby](https://github.com/atipugin/telegram-bot-ruby) 
+Fork di [telegram-bot-ruby](https://github.com/atipugin/telegram-bot-ruby) 
 
 Ruby wrapper for [Telegram's Bot API](https://core.telegram.org/bots/api).
 
