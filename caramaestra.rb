@@ -5,10 +5,12 @@ token = '178748095:AAGH1i992MEmJmph6Ci6R2Zm2nbuSJ6xC5g'
 Telegram::Bot::Client.run (token) do |bot|
 bot.listen do |message|
 	case message.text
+	when '/help'
+		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao, @#{message.from.username}, per iniziare la lezione invia /lezione")
 	when '/start'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao, @#{message.from.username}, per iniziare la lezione invia /lezione")
 	when '/stop'
-		bot.api.sendMessage(chat_id: message.chat.id, text: "Arrivederci, #{message.from.username}")
+		bot.api.sendMessage(chat_id: message.chat.id, text: "Arrivederci a presto caro #{message.from.username}")
 	when '@caramaestra_bot'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, per iniziare la lezione invia /lezione.")
 	when '/lezione'
