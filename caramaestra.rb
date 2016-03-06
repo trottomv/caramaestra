@@ -44,7 +44,7 @@ bot.listen do |message|
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, domanda sull'analisi logica: nella frase <<Giulia è partita>>, “Giulia” è il soggetto che compie l'azione di partire, quindi “è partita” è il predicato /verbale o /nominale?")
 		when message.text = '/nominale'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Ahi ahi, sei proprio sicuro di aver studiato bene il capitolo sull'analisi logica? http://www.grammaticaitaliana.eu/analisi_logica.html Studia meglio e prova a rispondere di nuovo alla domanda, quando avrai studiato meglio scrivi /pronto")
-when message.text = '/verbale'
+		when message.text = '/verbale'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene risposta corretta, ti meriti un altro bel voto sul registro elettronico. Arrivederci @#{message.from.username} alla prissima lezione")
     end
 	end
