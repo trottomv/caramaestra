@@ -6,46 +6,55 @@ Telegram::Bot::Client.run (token) do |bot|
 bot.listen do |message|
 	case message.text
 	when '/help'
-		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao, @#{message.from.username}, per iniziare la prima lezione invia /lezione")
-	when '/start'
-		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao, @#{message.from.username}, per iniziare la prima lezione invia /lezione")
-	when '/stop'
-		bot.api.sendMessage(chat_id: message.chat.id, text: "Arrivederci a presto caro #{message.from.username}")
-	when '@caramaestra_bot'
-		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, per iniziare la prima lezione invia /lezione.")
-	when '/lezione'
-		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, benvenut* al corso di grammatica italiana, io sono la prof.ssa Maria Barbadoro.")
-		bot.api.sendMessage(chat_id: message.chat.id, text: "Per dialogare con me occorre utilizzare il simbolo '/' anteposto ad ogni parola. Tutto chiaro? /si o /no")
+		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, benvenut* al corso di grammatica italiana, io sono la prof.ssa Maria Barbadoro. Per dialogare con me occorre utilizzare il simbolo '/' anteposto ad ogni parola. Tutto chiaro? /si o /no")
 		when message.text = '/no'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Per esempio quando faccio l'appello e chiedo <<@#{message.from.username} e' presente>>? la sintassi corretta della risposta e' /si. Adesso hai capito?")	
 		when message.text = '/si'
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, iniziamo subito con la nostra lezione.")
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Caro @#{message.from.username}, potresti dirmi quale e' la capitale di Italia?")
+			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, @#{message.from.username}, questo e' il programma delle mie lezioni:
+			/lezione 'Uso delle maiuscole nella lingua italiana'
+			/lezione1 'Analisi logica'
+			Scrivi quale lezione vuoi svolgere.")
+	when '/start'
+		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, benvenut* al corso di grammatica italiana, io sono la prof.ssa Maria Barbadoro.
+			questo e' il programma delle mie lezioni:
+			/lezione 'Uso delle maiuscole nella lingua italiana'
+			/lezione1 'Analisi logica'
+			Scrivi quale lezione vuoi svolgere.")
+	when '@caramaestra_bot'
+		ot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, benvenut* al corso di grammatica italiana, io sono la prof.ssa Maria Barbadoro.
+			questo e' il programma delle mie lezioni:
+			/lezione 'Uso delle maiuscole nella lingua italiana'
+			/lezione1 'Analisi logica'
+			Scrivi quale lezione vuoi svolgere.")
+	when '/lezione'
+		bot.api.sendMessage(chat_id: message.chat.id, text: "Car* @#{message.from.username}, iniziamo subito con una domanda: potresti cortesemente dirmi quale e' la capitale di Italia?")
 		when message.text = '/roma'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Come sarebbe a dire /roma?? Intendevi dire /Roma spero??")
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Riscrivila correttamente per cortesia.")
 		when message.text = '/Roma'
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene prendi pure posto e prestiamo attenzione!!")
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Come prima cosa studiati bene l'uso delle maiuscole nella lingua italiana http://www.grammaticaitaliana.eu/uso_delle_maiuscole.html")
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Fatto? quando sarai pronto rispondi /fatto .")
+			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene prendi pure posto e prestiamo attenzione!!
+				Come prima cosa studiati bene l'uso delle maiuscole nella lingua italiana http://www.grammaticaitaliana.eu/uso_delle_maiuscole.html
+				Fatto? (quando sarai pronto rispondi /fatto ).")
 		when message.text = '/fatto'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, domanda: i nomi di popoli, nel caso vengano utilizzati come aggettivi, devono essere scritti con l'iniziale /maiuscola o /minuscola?")
 		when message.text = '/minuscola'
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, risposta corretta. Caro @#{message.from.username}, ti meriti proprio un bel voto sul registro elettronico.")
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Per la prossima lezione, ripassa l'uso delle maiuscole e studiati il prossimo capitolo sull'analisi logica http://www.grammaticaitaliana.eu/analisi_logica.html")
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Arrivederci alla prossima /lezione1 caro @#{message.from.username}.")
+			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, risposta corretta. Car* @#{message.from.username}, ti meriti proprio un bel voto sul registro elettronico.
+				Per la prossima lezione, ripassa l'uso delle maiuscole e studiati il prossimo capitolo sull'analisi logica http://www.grammaticaitaliana.eu/analisi_logica.html
+				Arrivederci alla prossima /lezione1 car* @#{message.from.username}.")
 		when message.text = '/maiuscola'
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Ahi Ahi Ahi... Caro @#{message.from.username} proprio non ci siamo! Non so proprio come devo fare con te. Qui partiamo proprio male, sono costretta a metterti un brutto voto sul registro elettronico!")
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Mi raccomando, per la prossima lezione, ripassa bene l'uso delle maiuscole e studiati il prossimo capitolo sull'analisi logica http://www.grammaticaitaliana.eu/analisi_logica.html")
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Arrivederci alla prossima /lezione1 caro @#{message.from.username}.")
+			bot.api.sendMessage(chat_id: message.chat.id, text: "Ahi Ahi Ahi... Car* @#{message.from.username} proprio non ci siamo! Non so proprio come devo fare con te. Qui partiamo proprio male, sono costretta a metterti un brutto voto sul registro elettronico!
+				Mi raccomando, per la prossima lezione, ripassa bene l'uso delle maiuscole e studiati il prossimo capitolo sull'analisi logica http://www.grammaticaitaliana.eu/analisi_logica.html
+				Arrivederci alla prossima /lezione1 car* @#{message.from.username}.")
 	when '/lezione1'
-		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, iniziamo subito con la seconda lezione. Hai gia' studiato il capitolo sull'analisi logica? http://www.grammaticaitaliana.eu/analisi_logica.html (quando sarai pronto su questo argomento scrivi /pronto )")
-    		when message.text = '/pronto'
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, domanda sull'analisi logica: nella frase <<Giulia è partita>>, “Giulia” è il soggetto che compie l'azione di partire, quindi “è partita” è il predicato /verbale o /nominale?")
+		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, iniziamo subito con la seconda lezione. Hai gia' studiato il secondo capitolo del programma sull'analisi logica? http://www.grammaticaitaliana.eu/analisi_logica.html (quando sarai pronto su questo argomento scrivi /pronto )")
+    	when message.text = '/pronto'
+			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, domanda sull'analisi logica: nella frase <<Giulia è partita.>>, 'Giulia' è il soggetto che compie l'azione di partire, quindi 'è partita' è il predicato /verbale o /nominale?")
 		when message.text = '/nominale'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Ahi ahi, sei proprio sicuro di aver studiato bene il capitolo sull'analisi logica? http://www.grammaticaitaliana.eu/analisi_logica.html Studia meglio e prova a rispondere di nuovo alla domanda, quando avrai studiato meglio scrivi /pronto")
 		when message.text = '/verbale'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene risposta corretta, ti meriti un altro bel voto sul registro elettronico. Arrivederci @#{message.from.username} alla prissima lezione")
+    when '/stop'
+		bot.api.sendMessage(chat_id: message.chat.id, text: "Arrivederci a presto car* #{message.from.username}")
+    end
 	end
-end
 end
