@@ -16,16 +16,16 @@ bot.listen do |message|
 			Scrivi quale lezione vuoi svolgere.")
 	when '/start'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, benvenut* al corso di grammatica italiana, io sono la prof.ssa Maria Barbadoro.
-			questo e' il programma delle mie lezioni:
-			/lezione 'Uso delle maiuscole nella lingua italiana'
-			/lezione1 'Analisi logica'
-			Scrivi quale lezione vuoi svolgere.")
+		Questo e' il programma delle mie lezioni:
+		/lezione 'Uso delle maiuscole nella lingua italiana'
+		/lezione1 'Analisi logica'
+		Scrivi quale lezione vuoi svolgere.")
 	when '@caramaestra_bot'
 		ot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, benvenut* al corso di grammatica italiana, io sono la prof.ssa Maria Barbadoro.
-			questo e' il programma delle mie lezioni:
-			/lezione 'Uso delle maiuscole nella lingua italiana'
-			/lezione1 'Analisi logica'
-			Scrivi quale lezione vuoi svolgere.")
+		Questo e' il programma delle mie lezioni:
+		/lezione 'Uso delle maiuscole nella lingua italiana'
+		/lezione1 'Analisi logica'
+		Scrivi quale lezione vuoi svolgere.")
 	when '/lezione'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Car* @#{message.from.username}, iniziamo subito con una domanda: potresti cortesemente dirmi quale e' la capitale di Italia?")
 		when message.text = '/roma'
