@@ -6,13 +6,13 @@ Telegram::Bot::Client.run (token) do |bot|
 bot.listen do |message|
 	case message.text
 	when '/help'
-		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao, @#{message.from.username}, per iniziare la lezione invia /lezione")
+		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao, @#{message.from.username}, per iniziare la prima lezione invia /lezione")
 	when '/start'
-		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao, @#{message.from.username}, per iniziare la lezione invia /lezione")
+		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao, @#{message.from.username}, per iniziare la prima lezione invia /lezione")
 	when '/stop'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Arrivederci a presto caro #{message.from.username}")
 	when '@caramaestra_bot'
-		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, per iniziare la lezione invia /lezione.")
+		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, per iniziare la prima lezione invia /lezione.")
 	when '/lezione'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, benvenut* al corso di grammatica italiana, io sono la prof.ssa Maria Barbadoro.")
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Per dialogare con me occorre utilizzare il simbolo '/' anteposto ad ogni parola. Tutto chiaro? /si o /no")
@@ -33,11 +33,19 @@ bot.listen do |message|
 		when message.text = '/minuscola'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, risposta corretta. Caro @#{message.from.username}, ti meriti proprio un bel voto sul registro elettronico.")
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Per la prossima lezione, ripassa l'uso delle maiuscole e studiati il prossimo capitolo sull'analisi logica http://www.grammaticaitaliana.eu/analisi_logica.html")
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Arrivederci a presto caro @#{message.from.username}.")
+			bot.api.sendMessage(chat_id: message.chat.id, text: "Arrivederci alla prossima /lezione1 caro @#{message.from.username}.")
 		when message.text = '/maiuscola'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Ahi Ahi Ahi... Caro @#{message.from.username} proprio non ci siamo! Non so proprio come devo fare con te. Qui partiamo proprio male, sono costretta a metterti un brutto voto sul registro elettronico!")
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Mi raccomando, per la prossima lezione, ripassa bene l'uso delle maiuscole e studiati il prossimo capitolo sull'analisi logica http://www.grammaticaitaliana.eu/analisi_logica.html")
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Arrivederci a presto caro @#{message.from.username}.")
+			bot.api.sendMessage(chat_id: message.chat.id, text: "Arrivederci alla prossima /lezione1 caro @#{message.from.username}.")
+	when '/lezione1'
+		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, iniziamo subito con la seconda lezione. Hai gia' studiato il capitolo sull'analisi logica? http://www.grammaticaitaliana.eu/analisi_logica.html (quando sarai pronto su questo argomento scrivi /pronto )")
+    	when message.text = '/pronto'
+			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, domanda sull'analisi logica: nella frase <<Giulia è partita>>, “Giulia” è il soggetto che compie l'azione di partire, quindi “è partita” è il predicato /verbale o /nominale?")
+		when message.text = '/nominale'
+			bot.api.sendMessage(chat_id: message.chat.id, text: "Ahi ahi, sei proprio sicuro di aver studiato bene il capitolo sull'analisi logica? http://www.grammaticaitaliana.eu/analisi_logica.html Studia meglio e prova a rispondere di nuovo alla domanda, quando avrai studiato meglio scrivi /pronto")
+when message.text = '/verbale'
+			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene risposta corretta, ti meriti un altro bel voto sul registro elettronico. Arrivederci @#{message.from.username} alla prissima lezione")
     end
 	end
 end
