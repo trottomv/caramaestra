@@ -10,41 +10,41 @@ bot.listen do |message|
 		when message.text = '/no'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Per esempio quando faccio l'appello e chiedo <<@#{message.from.username} e' presente>>? la sintassi corretta della risposta e' /si. Adesso hai capito?")	
 		when message.text = '/si'
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, @#{message.from.username}, questo e' il programma delle mie lezioni:
-			/lezione 'Uso delle maiuscole nella lingua italiana'
-			/lezione1 'Analisi logica'
-			Scrivi quale lezione vuoi svolgere.")
+			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, @#{message.from.username}, prendi pure posto e prestiamo attenzione. Questo e' il programma delle mie lezioni:
+/lezione 'Uso delle maiuscole nella lingua italiana'
+/lezione1 'Analisi logica'
+Scrivi quale lezione vorresti svolgere.")
 	when '/start'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, benvenut* al corso di grammatica italiana, io sono la prof.ssa Maria Barbadoro.
-		Questo e' il programma delle mie lezioni:
-		/lezione 'Uso delle maiuscole nella lingua italiana'
-		/lezione1 'Analisi logica'
-		Scrivi quale lezione vuoi svolgere.")
+Prendi pure posto e prestiamo attenzione. Questo e' il programma delle mie lezioni:
+/lezione 'Uso delle maiuscole nella lingua italiana'
+/lezione1 'Analisi logica'
+Scrivi quale lezione vorresti svolgere.")
 	when '@caramaestra_bot'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, benvenut* al corso di grammatica italiana, io sono la prof.ssa Maria Barbadoro.
-		Questo e' il programma delle mie lezioni:
-		/lezione 'Uso delle maiuscole nella lingua italiana'
-		/lezione1 'Analisi logica'
-		Scrivi quale lezione vuoi svolgere.")
+Prendi pure posto e prestiamo attenzione. Questo e' il programma delle mie lezioni:
+/lezione 'Uso delle maiuscole nella lingua italiana'
+/lezione1 'Analisi logica'
+Scrivi quale lezione vorresti svolgere.")
 	when '/lezione'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Car* @#{message.from.username}, iniziamo subito con una domanda: potresti cortesemente dirmi quale e' la capitale di Italia?")
 		when message.text = '/roma'
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Come sarebbe a dire /roma?? Intendevi dire /Roma spero??")
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Riscrivila correttamente per cortesia.")
+			bot.api.sendMessage(chat_id: message.chat.id, text: "Come sarebbe a dire /roma?? Intendevi dire /Roma spero??
+Riscrivila correttamente per cortesia.")
 		when message.text = '/Roma'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene prendi pure posto e prestiamo attenzione!!
-			Come prima cosa studiati bene l'uso delle maiuscole nella lingua italiana http://www.grammaticaitaliana.eu/uso_delle_maiuscole.html
-			Fatto? (quando sarai pronto rispondi /fatto ).")
+Come prima cosa studiati bene l'uso delle maiuscole nella lingua italiana http://www.grammaticaitaliana.eu/uso_delle_maiuscole.html
+Fatto? (quando sarai pronto rispondi /fatto ).")
 		when message.text = '/fatto'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, domanda: i nomi di popoli, nel caso vengano utilizzati come aggettivi, devono essere scritti con l'iniziale /maiuscola o /minuscola?")
 		when message.text = '/minuscola'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, risposta corretta. Car* @#{message.from.username}, ti meriti proprio un bel voto sul registro elettronico.
-			Per la prossima lezione, ripassa l'uso delle maiuscole e studiati il prossimo capitolo sull'analisi logica http://www.grammaticaitaliana.eu/analisi_logica.html
-			Arrivederci alla prossima /lezione1 car* @#{message.from.username}.")
+Per la prossima lezione, ripassa l'uso delle maiuscole e studiati il prossimo capitolo sull'analisi logica http://www.grammaticaitaliana.eu/analisi_logica.html
+Arrivederci alla prossima /lezione1 car* @#{message.from.username}.")
 		when message.text = '/maiuscola'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Ahi Ahi Ahi... Car* @#{message.from.username} proprio non ci siamo! Non so proprio come devo fare con te. Qui partiamo proprio male, sono costretta a metterti un brutto voto sul registro elettronico!
-			Mi raccomando, per la prossima lezione, ripassa bene l'uso delle maiuscole e studiati il prossimo capitolo sull'analisi logica http://www.grammaticaitaliana.eu/analisi_logica.html
-			Arrivederci alla prossima /lezione1 car* @#{message.from.username}.")
+Mi raccomando, per la prossima lezione, ripassa bene l'uso delle maiuscole e studiati il prossimo capitolo sull'analisi logica http://www.grammaticaitaliana.eu/analisi_logica.html
+Arrivederci alla prossima /lezione1 car* @#{message.from.username}.")
 	when '/lezione1'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, iniziamo subito con la seconda lezione. Hai gia' studiato il secondo capitolo del programma sull'analisi logica? http://www.grammaticaitaliana.eu/analisi_logica.html (quando sarai pronto su questo argomento scrivi /pronto )")
     	when message.text = '/pronto'
