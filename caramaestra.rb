@@ -45,9 +45,9 @@ Fatto? (quando sarai pronto rispondi /fatto ).")
 Per la prossima lezione, ripassa l'uso delle maiuscole e studiati il prossimo capitolo sull'analisi logica http://www.grammaticaitaliana.eu/analisi_logica.html
 Arrivederci alla prossima /lezione1 car* @#{message.from.username}.")
 		when '/maiuscola'
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Ahi Ahi Ahi... Car* @#{message.from.username} proprio non ci siamo! Non so proprio come devo fare con te. Qui partiamo proprio male, sono costretta a metterti un brutto voto sul registro elettronico!
-Mi raccomando, per la prossima lezione, ripassa bene l'uso delle maiuscole e studiati il prossimo capitolo sull'analisi logica http://www.grammaticaitaliana.eu/analisi_logica.html
-Arrivederci alla prossima /lezione1 car* @#{message.from.username}.")
+			bot.api.sendMessage(chat_id: message.chat.id, text: "Ahi Ahi Ahi... Car* @#{message.from.username} proprio non ci siamo! Non so proprio come devo fare con te. 
+Qui partiamo proprio male, sarei costretta a metterti un brutto voto sul registro elettronico ma prova a ristudiarti meglio l'uso delle maiuscole http://www.grammaticaitaliana.eu/uso_delle_maiuscole.html 
+E prova a rispondere di nuovo alla domanda, quando avrai ristudiato meglio questo capitolo scrivi /fatto .")
 	when '/lezione1'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, iniziamo subito con la seconda lezione. Hai gia' studiato il secondo capitolo del programma sull'analisi logica? http://www.grammaticaitaliana.eu/analisi_logica.html (quando sarai pronto su questo argomento scrivi /pronto )")
     		when '/pronto'
@@ -55,7 +55,7 @@ Arrivederci alla prossima /lezione1 car* @#{message.from.username}.")
 		when message.text = '/nominale'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Ahi ahi, sei proprio sicuro di aver studiato bene il capitolo sull'analisi logica? http://www.grammaticaitaliana.eu/analisi_logica.html Studia meglio e prova a rispondere di nuovo alla domanda, quando avrai studiato meglio scrivi /pronto")
 		when message.text = '/verbale'
-			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene risposta corretta, ti meriti un altro bel voto sul registro elettronico. Arrivederci @#{message.from.username} alla prissima lezione")
+			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene risposta corretta, ti meriti un altro bel voto sul registro elettronico. Arrivederci @#{message.from.username} alla prossima lezione")
 	when '/stop'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Arrivederci a presto car* #{message.from.username}")
 	end
