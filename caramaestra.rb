@@ -11,19 +11,19 @@ bot.listen do |message|
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Per esempio quando faccio l'appello e chiedo <<@#{message.from.username} e' presente>>? la sintassi corretta della risposta e' /si. Adesso hai capito?")	
 		when message.text = '/si'
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene, @#{message.from.username}, prendi pure posto e prestiamo attenzione. Questo e' il programma delle mie lezioni:
-/lezione 'Uso delle maiuscole nella lingua italiana'
+/lezione 'Lezione introduttiva'
 /lezione1 'Analisi logica'
 Scrivi quale lezione vorresti svolgere.")
 	when '/start'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, benvenut* al corso di grammatica italiana, io sono la prof.ssa Maria Barbadoro.
 Prendi pure posto e prestiamo attenzione. Questo e' il programma delle mie lezioni:
-/lezione 'Uso delle maiuscole nella lingua italiana'
+/lezione 'Lezione introduttiva'
 /lezione1 'Analisi logica'
 Scrivi quale lezione vorresti svolgere.")
 	when '@caramaestra_bot'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Ciao @#{message.from.username}, benvenut* al corso di grammatica italiana, io sono la prof.ssa Maria Barbadoro.
 Prendi pure posto e prestiamo attenzione. Questo e' il programma delle mie lezioni:
-/lezione 'Uso delle maiuscole nella lingua italiana'
+/lezione 'Lezione introduttiva'
 /lezione1 'Analisi logica'
 Scrivi quale lezione vorresti svolgere.")
 	when '/lezione'
