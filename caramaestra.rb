@@ -55,7 +55,7 @@ E prova a rispondere di nuovo alla domanda, quando avrai ristudiato meglio quest
 	when '/stop'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Arrivederci a presto car* #{message.from.username}")
 	when '/comics'
-		bot.api.send_photo(chat_id: message.chat.id, photo: File.new("http://imgs.xkcd.com/comics/law_of_drama.png ").base_uri.to_s
+		bot.api.send_photo(chat_id: message.chat.id, photo: File.new("http://imgs.xkcd.com/comics/law_of_drama.png ")
 	end
 end
 end
