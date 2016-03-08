@@ -54,7 +54,7 @@ E prova a rispondere di nuovo alla domanda, quando avrai ristudiato meglio quest
 			bot.api.sendMessage(chat_id: message.chat.id, text: "Bene risposta corretta, ti meriti un altro bel voto sul registro elettronico. Arrivederci @#{message.from.username} alla prossima lezione")
 	when '/stop'
 		bot.api.sendMessage(chat_id: message.chat.id, text: "Arrivederci a presto car* #{message.from.username}")
-	when '/comics'
+	when '/photo'
 		bot.api.send_photo(chat_id: message.chat.id, photo: File.new("http://imgs.xkcd.com/comics/law_of_drama.png ")
 	end
 end
