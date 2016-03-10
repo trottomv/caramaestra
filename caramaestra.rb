@@ -1,7 +1,8 @@
-
 require 'telegram/bot'
+require 'dotenv'
 
-token = '178748095:AAGH1i992MEmJmph6Ci6R2Zm2nbuSJ6xC5g'
+Dotenv.load
+token = ENV[TOKEN]
 
 Telegram::Bot::Client.run (token) do |bot|
 bot.listen do |message|
